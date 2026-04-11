@@ -22,4 +22,61 @@ for (;;) {
 }
 */
 
+function count() {
+    console.log("inside count fn "+this.length);
+}
+
+let arr = [count, 1, 2, 3];
+
+arr[0]('hi');
+
+/*
+this binding (implicit binding) in JavaScript
+this refers to the object before the dot → arr
+this refers to the array (arr), so this.length is 4.
+
+https://www.instagram.com/reel/DWZJutFDHCV/?igsh=eXdrMDc1b3EweTc5
+*/
+let narr = [1, [2, [3, 4]]];
+
+//using built-in method
+let res = narr.flat(Infinity);
+
+function flatArray(arr) {
+  let res = [];
+
+  for (let i of arr) {
+    if (Array.isArray(i)) {
+      res.push(...flatArray(i));
+    } else {
+      res.push(i);
+    }
+  }
+
+  return res;
+}
+
+// Example
+console.log("nested arrays recursive method ",flatArray(narr)); // [1, 2, 3, 4]
+
+
+
+console.log("nested arrays buitin method",res);
+
+/*
+Loop through each element
+If element is an array → call function again (recursion)
+If not → push directly
+... spreads the returned flattened values into res
+*/
+
+/*
+https://www.instagram.com/reel/DT2txrJErAf/?igsh=dWc5OTQycTZpNXVk
+
+*/
+
+let a2=5,b2=10;
+console.log("before swap single line ", a2,b2);
+a2= (a2+b2)-(b2=a2);
+console.log("aftswap single line ", a2,b2);
 
