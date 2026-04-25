@@ -112,3 +112,22 @@ console.log(result);
 sort arrnum1 in asending order
 https://www.instagram.com/reel/DVYx-nfDN4y/?igsh=ZWZkcWFsNWduZjRv
 */
+
+myFunc();   // (1)
+
+var myFunc = () => {
+  console.log('one');
+}
+
+myFunc(); // (2)
+
+function myFunc() {
+  console.log('two');
+}
+
+myFunc();   // (3)
+
+/*
+js hoisting iv question
+https://www.instagram.com/reel/DWRdduZDgmK/?igsh=MTB6ZTQ4dmd6bzl1eA==
+*/
