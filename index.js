@@ -131,3 +131,40 @@ myFunc();   // (3)
 js hoisting iv question
 https://www.instagram.com/reel/DWRdduZDgmK/?igsh=MTB6ZTQ4dmd6bzl1eA==
 */
+
+var count = 0;
+
+(function test() {
+  if (count === 0) {
+    var count = 1;
+    console.log(count); // ?
+  }
+  console.log(count);   // ?
+})();
+
+/*
+var → function scoped + hoisted (causes bugs like this)
+let/const → block scoped (safer)
+
+https://www.instagram.com/reel/DXhMyzkDURT/?igsh=cnVob3BrbG5waDc=
+*/
+
+
+let ab = {
+  value: 1,
+  valueOf() {
+    console.log('called');
+    return this.value++;
+  }
+};
+
+if (ab == 1 && ab == 2 && ab == 3) {
+  console.log("YES");
+}
+
+/*
+in above question find value of a?
+
+Explanation (1 line): valueOf() is invoked on each == comparison, returning incremented values (1, 2, 3) so all conditions become true.
+https://www.instagram.com/reel/DWG_Bt2DEgn/?igsh=MW1nNTRmanVjeG95Ng==
+*/
