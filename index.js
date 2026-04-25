@@ -80,3 +80,35 @@ console.log("before swap single line ", a2,b2);
 a2= (a2+b2)-(b2=a2);
 console.log("aftswap single line ", a2,b2);
 
+
+
+
+let arrnum1 = [1, 2, 3, 3, 4, 3, 3, 1, 1, 2];
+// sort in asending order of frequency
+// output [ 4, 2, 1, 3 ]
+
+// Step 1: Count frequency
+let obj = {};
+
+for (let num of arrnum1) {
+  obj[num] = obj[num] + 1 || 1;
+}
+
+// Step 2: Convert object to array of [key, value]
+let entries = Object.entries(obj);
+
+// Step 3: Sort by frequency (ascending)
+let sorted = entries.sort((a, b) => {
+  return a[1] - b[1];
+});
+
+// Step 4: Extract only numbers (keys)
+let result = sorted.map(ele => +ele[0]);
+
+console.log(result);
+
+
+/*
+sort arrnum1 in asending order
+https://www.instagram.com/reel/DVYx-nfDN4y/?igsh=ZWZkcWFsNWduZjRv
+*/
