@@ -73,6 +73,7 @@ If not → push directly
 /*
 https://www.instagram.com/reel/DT2txrJErAf/?igsh=dWc5OTQycTZpNXVk
 
+https://www.instagram.com/reel/DT2txrJErAf/?igsh=MTN0aGd3aTJ2eDJwYw==
 */
 
 let a2=5,b2=10;
@@ -167,4 +168,61 @@ in above question find value of a?
 
 Explanation (1 line): valueOf() is invoked on each == comparison, returning incremented values (1, 2, 3) so all conditions become true.
 https://www.instagram.com/reel/DWG_Bt2DEgn/?igsh=MW1nNTRmanVjeG95Ng==
+*/
+
+function missingNumber(arr, n) {
+  const expected = (n * (n + 1)) / 2;
+  const actual = arr.reduce((sum, num) => sum + num, 0);
+  return expected - actual;
+}
+
+const a3 = [1, 3, 5, 4];
+const n1 = 5;
+
+console.log(missingNumber(a3, n1)); // 2
+
+/*
+Gauss Formula Code
+expected sum
+S=n(n+1)/2
+1-line explanation: Uses the Gauss formula to subtract actual sum from expected sum and get the missing number.
+*/
+
+fetch('https://jsonplaceholder.typicode.com/posts/1')
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error('Error:', error));
+  
+  
+  function isPalindrome(str) {
+    let left = 0;
+    let right = str.length - 1;
+
+    while (left < right) {
+        // Compare characters from both ends
+        if (str[left] !== str[right]) {
+            return false;
+        }
+
+        left++;
+        right--;
+    }
+
+    return true;
+}
+
+const arr2 = ["madam", "hello", "level", "world", "noon"];
+
+// Print only palindrome words
+for (let item of arr2) {
+    if (isPalindrome(item)) {
+        console.log("Palindrome: "+item);
+    }
+}
+
+/*
+Two pointers (left and right) compare characters from both ends.
+If any characters differ, it returns false.
+Otherwise, it returns true.
+https://www.instagram.com/reel/DYR7g7kqJRO/?igsh=MWs0cTlydXQ2eXNnMw==
 */
